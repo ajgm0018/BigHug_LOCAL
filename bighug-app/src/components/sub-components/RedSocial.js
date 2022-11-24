@@ -6,7 +6,6 @@ import twitter from '../images/twitter.png'
 import instagram from '../images/instagram.png'
 import desplegable1 from '../images/desplegable1.png'
 import desplegable2 from '../images/desplegable2.png'
-import grafico from '../images/graficoplaceholder.png'
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 

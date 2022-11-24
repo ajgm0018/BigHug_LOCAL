@@ -243,38 +243,40 @@ const MiCuenta = () => {
                 </div>
             </div>
             
-            <div className="d-flex justify-content-center container">
-                <div className="card text-dark bg-light mb-3 col-12 col-sm-9 col-md-8 col-lg-8 col-xl-8 py-4" >
-                        <form method='post' onSubmit={handleSubmit_eliminar}>
-                            <div className='d-flex justify-content-center'>
-                                <div className='row col-11'>
-                                    <input
-                                        id="email2"
-                                        type="email" 
-                                        value={email2} 
-                                        onChange={(e) => setEmail2(e.target.value)}
-                                        className="form-control" 
-                                        placeholder="Confirmar email">
-                                    </input>
-                                    <div>
-                                        <p className='error-message'>{message4}</p>
+            <div>
+                <div className="d-flex justify-content-center container">
+                    <div className="card text-dark bg-light mb-3 col-12 col-sm-9 col-md-8 col-lg-8 col-xl-8 py-4" >
+                            <form method='post' onSubmit={handleSubmit_eliminar}>
+                                <div className='d-flex justify-content-center'>
+                                    <div className='row col-11'>
+                                        <input
+                                            id="email2"
+                                            type="email" 
+                                            value={email2} 
+                                            onChange={(e) => setEmail2(e.target.value)}
+                                            className="form-control" 
+                                            placeholder="Confirmar email">
+                                        </input>
+                                        <div>
+                                            <p className='error-message'>{message4}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div className='d-flex justify-content-center'>
-                                <button 
-                                    type="submit" 
-                                    className="btn btn-danger btn-lg button-red"
-                                    >Eliminar cuenta
-                                </button>
-                            </div>
-                        </form>
-                    <div className='py-2'></div>
+                                <div className='d-flex justify-content-center'>
+                                    <button 
+                                        type="submit" 
+                                        className="btn btn-danger btn-lg button-red"
+                                        >Eliminar cuenta
+                                    </button>
+                                </div>
+                            </form>
+                        <div className='py-2'></div>
+                    </div>
                 </div>
             </div>
 
-            <div className='d-flex container justify-content-center col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 py-2'>
+            <div className='d-flex container justify-content-center col-12 col-sm-8 col-md-8 col-lg-8 col-xl-2 py-2'>
                 <button 
                     className="btn btn-primary btn-lg button-green"
                     onClick={logout}

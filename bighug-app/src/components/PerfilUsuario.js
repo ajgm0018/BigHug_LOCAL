@@ -3,7 +3,7 @@ import './css/perfilusuario.css';
 import React from 'react'
 import BotonAddRedSocial from './sub-components/BotonAddRedSocial';
 import { useEffect, useState } from "react";
-import { useNavigate, Navigate} from 'react-router-dom'
+import { Navigate} from 'react-router-dom'
 import axios from 'axios';
 import Navbar from './Navbar';
 import RedSocial from './sub-components/RedSocial';
@@ -18,7 +18,6 @@ const PerfilUsuario = () => {
     ////var url = "http://localhost:8000/users/"
     var url = "http://localhost:5500/users/"
     const token = localStorage.getItem("accesstoken")
-    const navigate = useNavigate();
 
     //** -- Cada vez que entra en la vista pedir las redes sociales asociadas --
     useEffect(() => {

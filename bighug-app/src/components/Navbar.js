@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './css/general.css';
 import './css/navbar.css';
 import Settings from './sub-components/Settings'
