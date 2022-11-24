@@ -161,6 +161,7 @@ const RedSocial = (props) => {
         var color_ = colores[res-1]
 
         //** -- Porcentaje de la barra de color --
+        console.log("Soy el score: ", props.score)
         var puntos = props.score
         puntos = puntos + "%"
 
@@ -260,7 +261,7 @@ const RedSocial = (props) => {
                 </div>
                 <hr className='linea-color'></hr>
                 
-                <Bar id={"1"} nombre={"Ansiedad: "} score={"71"}/>
+                <Bar id={"1"} nombre={"Ansiedad: "} score={props.score1}/>
                 <Desplegable desplegable={"ansiedad"} estado={estadoDesplegable1}/>
                 <Bar id={"2"} nombre={"Depresión: "} score={"91"}/>
                 <Desplegable desplegable={"depresion"} estado={estadoDesplegable2}/>

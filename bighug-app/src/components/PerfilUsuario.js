@@ -71,6 +71,7 @@ const PerfilUsuario = () => {
             }
 
             for (const i in redessociales){
+                console.log("ID: ", redessociales[i].score_1)
                 row.push(
                     <div key={i}>
                         <RedSocial 
