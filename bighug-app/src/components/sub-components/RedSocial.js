@@ -161,7 +161,7 @@ const RedSocial = (props) => {
         var color_ = colores[res-1]
 
         //** -- Porcentaje de la barra de color --
-        console.log("Soy el score: ", props.score)
+        ////console.log("Soy el score: ", props.score)
         var puntos = props.score
         puntos = puntos + "%"
 
@@ -236,13 +236,13 @@ const RedSocial = (props) => {
                 </div>
                 <hr className='linea-color'></hr>
                 
-                <Bar id={"1"} nombre={"Ansiedad: "} score={"50"}/>
+                <Bar id={"1"} nombre={"Ansiedad: "} score={props.score1_resumen}/>
                 <Desplegable desplegable={"ansiedad"} estado={estadoDesplegable1}/>
-                <Bar id={"2"} nombre={"Depresión: "} score={"43"}/>
+                <Bar id={"2"} nombre={"Depresión: "} score={props.score2_resumen}/>
                 <Desplegable desplegable={"depresion"} estado={estadoDesplegable2}/>
-                <Bar id={"3"} nombre={"TCA: "} score={"72"}/>
+                <Bar id={"3"} nombre={"TCA: "} score={props.score3_resumen}/>
                 <Desplegable desplegable={"tca"} estado={estadoDesplegable3}/>
-                <Bar id={"4"} nombre={"Ludopatía: "} score={"12"}/>
+                <Bar id={"4"} nombre={"Ludopatía: "} score={props.score4_resumen}/>
                 <Desplegable desplegable={"ludopatia"} estado={estadoDesplegable4}/>
                 
                 <div className='py-4'></div>
@@ -261,13 +261,13 @@ const RedSocial = (props) => {
                 </div>
                 <hr className='linea-color'></hr>
                 
-                <Bar id={"1"} nombre={"Ansiedad: "} score={props.score1}/>
+                <Bar id={"1"} nombre={"Ansiedad: "} score={props.score1*100}/>
                 <Desplegable desplegable={"ansiedad"} estado={estadoDesplegable1}/>
-                <Bar id={"2"} nombre={"Depresión: "} score={"91"}/>
+                <Bar id={"2"} nombre={"Depresión: "} score={props.score2*100}/>
                 <Desplegable desplegable={"depresion"} estado={estadoDesplegable2}/>
-                <Bar id={"3"} nombre={"TCA: "} score={"12"}/>
+                <Bar id={"3"} nombre={"TCA: "} score={props.score3*100}/>
                 <Desplegable desplegable={"tca"} estado={estadoDesplegable3}/>
-                <Bar id={"4"} nombre={"Ludopatía: "} score={"37"}/>
+                <Bar id={"4"} nombre={"Ludopatía: "} score={props.score4*100}/>
                 <Desplegable desplegable={"ludopatia"} estado={estadoDesplegable4}/>
                 
                 <div className='py-4'></div>
