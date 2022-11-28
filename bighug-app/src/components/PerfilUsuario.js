@@ -52,7 +52,6 @@ const PerfilUsuario = () => {
         )
         .then(
             resp => {
-                console.log(redessociales)
                 setRedessociales(resp.data)
         });
 
@@ -63,20 +62,27 @@ const PerfilUsuario = () => {
         const row = []
         if(redessociales){
             ////console.log(redessociales)
-            
+
             if(redessociales.length > 1){
 
+                var redes_sociales_vacias = 0
+                
                 for (const i in redessociales){
-                    sumatoria_1 = sumatoria_1 + redessociales[i]['scores'][0].score_1
-                    sumatoria_2 = sumatoria_2 + redessociales[i]['scores'][0].score_2
-                    sumatoria_3 = sumatoria_3 + redessociales[i]['scores'][0].score_3
-                    sumatoria_4 = sumatoria_4 + redessociales[i]['scores'][0].score_4
+                    if(redessociales[i]['scores'].length !== 0){
+                        var ultimascore = redessociales[i]['scores'].length-1
+                        sumatoria_1 = sumatoria_1 + redessociales[i]['scores'][ultimascore].score_1
+                        sumatoria_2 = sumatoria_2 + redessociales[i]['scores'][ultimascore].score_2
+                        sumatoria_3 = sumatoria_3 + redessociales[i]['scores'][ultimascore].score_3
+                        sumatoria_4 = sumatoria_4 + redessociales[i]['scores'][ultimascore].score_4
+                    }else{
+                        redes_sociales_vacias = redes_sociales_vacias + 1
+                    }
                 }
 
-                score_1_media = sumatoria_1 / (redessociales.length)
-                score_2_media = sumatoria_2 / (redessociales.length)
-                score_3_media = sumatoria_3 / (redessociales.length)
-                score_4_media = sumatoria_4 / (redessociales.length)
+                score_1_media = sumatoria_1 / (redessociales.length - redes_sociales_vacias)
+                score_2_media = sumatoria_2 / (redessociales.length - redes_sociales_vacias)
+                score_3_media = sumatoria_3 / (redessociales.length - redes_sociales_vacias)
+                score_4_media = sumatoria_4 / (redessociales.length - redes_sociales_vacias)
 
                 row.push(
                     <div key={"resumen"}>
@@ -91,20 +97,36 @@ const PerfilUsuario = () => {
                 )
             }
 
-            for (const i in redessociales){
-                ////console.log("AAAAAAAA: ", redessociales[i].name)
-                row.push(
-                    <div key={i}>
-                        <RedSocial 
-                        name = {redessociales[i].name}
-                        score1 = {redessociales[i]['scores'][0].score_1}
-                        score2 = {redessociales[i]['scores'][0].score_2}
-                        score3 = {redessociales[i]['scores'][0].score_3}
-                        score4 = {redessociales[i]['scores'][0].score_4}
-                        idred = {redessociales[i].id}
-                        />
-                    </div>
-                )
+            for (const i in redessociales){  
+                console.log(redessociales[i]['scores'])    
+                if(redessociales[i]['scores'].length === 0){
+                    row.push(
+                        <div key={i}>
+                            <RedSocial 
+                            name = {redessociales[i].name}
+                            score1 = {0}
+                            score2 = {0}
+                            score3 = {0}
+                            score4 = {0}
+                            idred = {redessociales[i].id}
+                            />
+                        </div>
+                    )
+                }else{
+                    var ultimascore = redessociales[i]['scores'].length-1
+                    row.push(
+                        <div key={i}>
+                            <RedSocial 
+                            name = {redessociales[i].name}
+                            score1 = {redessociales[i]['scores'][ultimascore].score_1}
+                            score2 = {redessociales[i]['scores'][ultimascore].score_2}
+                            score3 = {redessociales[i]['scores'][ultimascore].score_3}
+                            score4 = {redessociales[i]['scores'][ultimascore].score_4}
+                            idred = {redessociales[i].id}
+                            />
+                        </div>
+                    )
+                }
             }
 
             row.push(
@@ -133,7 +155,7 @@ const PerfilUsuario = () => {
                 
             </div>
         </div>
-    )
+    ) 
 
 }
 
