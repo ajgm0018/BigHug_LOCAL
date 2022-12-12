@@ -12,7 +12,7 @@ const Navbar = (props) => {
 
     // --- FUNCIONES --- //
     function ConfigNavbar(){
-        console.log(props.vista)
+        ////console.log(props.vista)
         const row = []
         if(props.vista === "iniciar-registrar"){
             row.push(
